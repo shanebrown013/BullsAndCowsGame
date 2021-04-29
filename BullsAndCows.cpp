@@ -4,19 +4,11 @@
 #include <chrono>
 #include <cmath>
 
-/*
-Shane Brown
-CSCE 121 - 398 SUMMER
-8 June 2020
-Bulls and Cows - 398
-*/
 using namespace std;
 
 int main() {
     srand(std::chrono::duration_cast<std::chrono::milliseconds>
      (std::chrono::system_clock::now().time_since_epoch()).count()%2000000000);
-    // needed to autograde some test cases in Mimir
-	  // do not call srand again in your program
 
 // Loop getting the number of digits in the code
     int numDigits = 0;
@@ -119,7 +111,7 @@ if (guessLength > numDigits) {
   continue;
 
 }
-// EXtracting digits from the guess and inputting into a vector
+// Extracting digits from the guess and inputting into a vector
 else if (guessLength <= numDigits) {
   for (int i = pow(10, numDigits - 1); i > numDigits; i = i / 10){
     int a = guess / i % 10;
